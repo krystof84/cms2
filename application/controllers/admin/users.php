@@ -7,11 +7,14 @@ class Users extends CI_Controller {
     public function __construct()
     {
         parent:: __construct();
+        $this->load->model('Admin_model');
     }
 
     public function index()
     {
-
+        $data['users'] = $this->Admin_model->get('users');
+        $data['info'] = 'Przykładowy tekst';
+        $this->load->view('admin/users/index', $data);
     }
 
     public function create()
@@ -27,7 +30,6 @@ class Users extends CI_Controller {
                     'password' => password_hash( $this->input->post('password', true), PASSWORD_BCRYPT )
                 );
 
-                $this->load->model('Admin_model');
 
                 $this->Admin_model->create( 'users', $data );
 

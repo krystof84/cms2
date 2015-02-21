@@ -15,4 +15,10 @@ class Admin_model extends CI_Model {
     {
         $this->db->insert($table, $data);
     }
+
+    public function get( $table )
+    {
+        $q = $this->db->get( $table );
+        return $q->result();
+    }
 }

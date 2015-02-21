@@ -1,5 +1,5 @@
 <?php require_once APPPATH . 'views/admin/include/header.php'; ?>
-
+<a href="<?php echo base_url('admin/users/index')?>">Lista użytkowników</a>
 <h1>Nowy użytkownik</h1>
 
 <?php echo form_open(); ?>
