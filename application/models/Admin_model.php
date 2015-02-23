@@ -34,4 +34,10 @@ class Admin_model extends CI_Model {
         $this->db->where( $where );
         $this->db->update( $table, $data);
     }
+
+    public function delete($table, $where)
+    {
+        $this->db->where($where);
+        $this->db->delete($table);
+    }
 }
